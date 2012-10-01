@@ -4,7 +4,7 @@
 
 	<groupId>com.cognifide.maven.plugins</groupId>
 	<artifactId>vltco-maven-plugin</artifactId>
-	<version>1.0-SNAPSHOT</version>
+	<version>0.1.0-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
 
 	<name>vltco-maven-plugin Maven Plugin</name>
@@ -26,13 +26,13 @@
 			<url>http://nexus.cognifide.com/content/repositories/cognifide-internal-snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
-	
+
 	<scm>
 		<connection>scm:svn:https://svn.cognifide.com/cqp/tools/vltco-maven-plugin/trunk</connection>
 		<developerConnection>scm:svn:https://svn.cognifide.com/cqp/tools/vltco-maven-plugin/trunk</developerConnection>
 		<url>https://svn.cognifide.com/cqp/tools/vltco-maven-plugin/trunk</url>
 	</scm>
-	
+
 	<dependencies>
 		<dependency>
 			<groupId>org.apache.maven.plugin-tools</groupId>
@@ -82,7 +82,7 @@
 			<artifactId>day-commons-cli</artifactId>
 			<version>2.0.10</version>
 		</dependency>
-		<!-- <dependency> <groupId>com.day.commons</groupId> <artifactId>day-commons-cli-launcher</artifactId> 
+		<!-- <dependency> <groupId>com.day.commons</groupId> <artifactId>day-commons-cli-launcher</artifactId>
 			</dependency> -->
 
 
@@ -153,9 +153,9 @@
 	</pluginRepositories>
 	<build>
 		<plugins>
-			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-plugin-plugin</artifactId> 
-				<version>2.5.1</version> <configuration> <goalPrefix>vltco</goalPrefix> </configuration> 
-				<executions> <execution> <id>generated-helpmojo</id> <goals> <goal>helpmojo</goal> 
+			<!-- <plugin> <groupId>org.apache.maven.plugins</groupId> <artifactId>maven-plugin-plugin</artifactId>
+				<version>2.5.1</version> <configuration> <goalPrefix>vltco</goalPrefix> </configuration>
+				<executions> <execution> <id>generated-helpmojo</id> <goals> <goal>helpmojo</goal>
 				</goals> </execution> </executions> </plugin> -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
@@ -222,7 +222,7 @@
 					<version>2.7</version>
 				</plugin>
 
-				<!--This plugin's configuration is used to store Eclipse m2e settings 
+				<!--This plugin's configuration is used to store Eclipse m2e settings
 					only. It has no influence on the Maven build itself. -->
 				<plugin>
 					<groupId>org.eclipse.m2e</groupId>
