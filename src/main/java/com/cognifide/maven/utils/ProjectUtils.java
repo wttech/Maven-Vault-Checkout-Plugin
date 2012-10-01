@@ -27,7 +27,7 @@ public class ProjectUtils {
 
 			try {
 				List<String> lines = new ArrayList<String>();
-				for (String line : (List<String>) FileUtils.readLines(file)) {
+				for (String line : (List<String>) FileUtils.readLines(file, "UTF-8")) {
 					String cleanLine = StringUtils.trimToEmpty(line);
 					// System.out.println(cleanLine);
 					String[] properties = { "jcr:lastModified", "jcr:created", "cq:lastModified",
@@ -44,7 +44,7 @@ public class ProjectUtils {
 						lines.add(line);
 					}
 				}
-				FileUtils.writeLines(file, lines);
+				FileUtils.writeLines(file, "UTF-8", lines);
 			} catch (IOException e) {
 				throw new MojoExecutionException(String.format("Error opening %s", file.getPath()), e);
 			}
