@@ -13,7 +13,7 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
-    
+
 	<distributionManagement>
 		<repository>
 			<id>cognifide-internal-repository</id>
@@ -26,6 +26,12 @@
 			<url>http://nexus.cognifide.com/content/repositories/cognifide-internal-snapshots</url>
 		</snapshotRepository>
 	</distributionManagement>
+	
+	<scm>
+		<connection>scm:svn:https://svn.cognifide.com/cqp/tools/vltco-maven-plugin/trunk</connection>
+		<developerConnection>scm:svn:https://svn.cognifide.com/cqp/tools/vltco-maven-plugin/trunk</developerConnection>
+		<url>https://svn.cognifide.com/cqp/tools/vltco-maven-plugin/trunk</url>
+	</scm>
 	
 	<dependencies>
 		<dependency>
