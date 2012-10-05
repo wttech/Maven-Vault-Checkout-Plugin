@@ -4,7 +4,7 @@
 
 	<groupId>com.cognifide.maven.plugins</groupId>
 	<artifactId>vltco-maven-plugin</artifactId>
-	<version>0.1.0-SNAPSHOT</version>
+	<version>0.2.0-SNAPSHOT</version>
 	<packaging>maven-plugin</packaging>
 
 	<name>vltco-maven-plugin Maven Plugin</name>
