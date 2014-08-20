@@ -1,30 +1,23 @@
 package com.cognifide.maven.plugins;
 
 public aspect VaultApp {
-	private Exception lastException = null;
+    private Exception lastException = null;
 
-	protected pointcut runAction() : call(public void com.day.jcr.vault.vlt.actions.Action.run(..));
+    protected pointcut runAction(): call(public void org.apache.jackrabbit.vault.vlt.actions.Action.run(..));
 
-	protected pointcut runParser() : call(public * org.apache.commons.cli2.commandline.Parser.parse(..));
+    after() throwing(Exception e): runAction() {
+        lastException = e;
+    }
 
-	protected pointcut prepareCommand() : call(public void com.day.util.console.AbstractApplication.prepare(..));
-	
-	protected pointcut executeCommand() : call(public void com.day.util.console.AbstractApplication.execute(..));
+    protected pointcut runCogApplication(): call(public static void com.cognifide.maven.plugins.CogVaultFsApp.main(..));
 
-	
-	after() throwing(Exception e): runAction() || runParser() || prepareCommand() ||  executeCommand() {
-		lastException = e;
-	}
-
-	protected pointcut runApplication() : call(public static void com.day.jcr.vault.cli.VaultFsApp.main(..));
-
-	after()  : runApplication() {
-		if (lastException != null) {
-			VltExecutionException vltExecutionException = new VltExecutionException(lastException);
-			lastException = null;
-			throw vltExecutionException;
-		}
-	}
+    after(): runCogApplication() {
+        if (lastException != null) {
+            VltExecutionException vltExecutionException = new VltExecutionException(lastException);
+            lastException = null;
+            throw vltExecutionException;
+        }
+    }
 
 	//org.apache.commons.cli2.commandline.Parser.parse
 	// com.day.util.console.AbstractApplication.prepare

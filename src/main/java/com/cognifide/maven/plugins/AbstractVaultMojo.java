@@ -9,8 +9,6 @@ import org.apache.commons.lang.ArrayUtils;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
-import com.day.jcr.vault.cli.VaultFsApp;
-
 public abstract class AbstractVaultMojo extends AbstractMojo {
 
 	@Parameter(property = "vltco.srcdir", defaultValue = "src/main/cq/jcr_root/")
@@ -31,6 +29,6 @@ public abstract class AbstractVaultMojo extends AbstractMojo {
 				"--force" }));
 		Collections.addAll(parameters, additionalParameters);
 		System.out.println("Invoking: vlt" + parameters);
-		VaultFsApp.main(parameters.toArray(ArrayUtils.EMPTY_STRING_ARRAY));
+		CogVaultFsApp.main(parameters.toArray(ArrayUtils.EMPTY_STRING_ARRAY));
 	}
 }
