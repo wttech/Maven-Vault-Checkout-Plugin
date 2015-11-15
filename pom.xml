@@ -28,9 +28,10 @@
     </distributionManagement>
 
     <scm>
-        <connection>scm:svn:https://svn.cognifide.com/cqp/tools/vltco-maven-plugin/trunk</connection>
-        <developerConnection>scm:svn:https://svn.cognifide.com/cqp/tools/vltco-maven-plugin/trunk</developerConnection>
-        <url>https://svn.cognifide.com/cqp/tools/vltco-maven-plugin/trunk</url>
+        <connection>scm:git:ssh://git@stash.cognifide.com/rnd/maven-vault-plugin.git</connection>
+        <developerConnection>scm:git:ssh://git@stash.cognifide.com/rnd/maven-vault-plugin.git</developerConnection>
+        <url>https://stash.cognifide.com/projects/RND/repos/maven-vault-plugin</url>
+        <tag>HEAD</tag>
     </scm>
 
     <dependencies>
