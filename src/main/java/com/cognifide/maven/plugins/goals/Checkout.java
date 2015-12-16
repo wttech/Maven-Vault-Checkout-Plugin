@@ -1,9 +1,10 @@
 package com.cognifide.maven.plugins.goals;
 
+import java.io.File;
+
 import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.plugins.annotations.Mojo;
 import org.apache.maven.plugins.annotations.Parameter;
-import org.codehaus.plexus.util.FileUtils;
 
 import com.cognifide.maven.plugins.AbstractVaultMojo;
 
@@ -14,10 +15,11 @@ public class Checkout extends AbstractVaultMojo {
 	protected String filter;
 
 	public void execute() throws MojoExecutionException {
-		if (FileUtils.fileExists(filter)) {
+		if (new File(filter).exists()) {
 			executeVaultCommand("checkout", "-f", filter, url, "/", srcdir);
 		} else {
 			executeVaultCommand("checkout", url, "/", srcdir);
 		}
 	}
+
 }

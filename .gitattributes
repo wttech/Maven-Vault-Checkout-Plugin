@@ -1,9 +1,0 @@
-* text=auto !eol
-/pom.xml -text
-src/main/java/com/cognifide/maven/plugins/AbstractVaultMojo.java -text
-src/main/java/com/cognifide/maven/plugins/CogVaultFsApp.java -text
-src/main/java/com/cognifide/maven/plugins/VaultApp.aj -text
-src/main/java/com/cognifide/maven/plugins/VltExecutionException.java -text
-src/main/java/com/cognifide/maven/plugins/goals/Checkout.java -text
-src/main/java/com/cognifide/maven/plugins/goals/CleanCheckout.java -text
-src/main/java/com/cognifide/maven/utils/ProjectUtils.java -text

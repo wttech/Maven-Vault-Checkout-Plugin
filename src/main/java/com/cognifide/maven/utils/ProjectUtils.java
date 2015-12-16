@@ -8,7 +8,7 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.NameFileFilter;
 import org.apache.commons.io.filefilter.TrueFileFilter;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.apache.maven.plugin.MojoExecutionException;
 
 public class ProjectUtils {
@@ -24,18 +24,16 @@ public class ProjectUtils {
 	public static void cleanupDotContent(String root) throws MojoExecutionException {
 		for (File file : FileUtils.listFiles(new File(root), new NameFileFilter(".content.xml"),
 				TrueFileFilter.INSTANCE)) {
-
 			try {
+				System.out.println("Cleaning up " + file.getPath());
 				List<String> lines = new ArrayList<String>();
-				for (String line : (List<String>) FileUtils.readLines(file, "UTF-8")) {
+				for (String line : FileUtils.readLines(file, "UTF-8")) {
 					String cleanLine = StringUtils.trimToEmpty(line);
-					// System.out.println(cleanLine);
 					String[] properties = { "jcr:lastModified", "jcr:created", "cq:lastModified",
 							"cq:lastReplicat", "jcr:uuid" };
 					boolean lineContains = lineContainsProperty(cleanLine, properties);
 					if (lineContains) {
 						if (!cleanLine.endsWith(">")) {
-
 						} else {
 							String lastLine = lines.remove(lines.size() - 1);
 							lines.add(lastLine + ">");
@@ -48,7 +46,6 @@ public class ProjectUtils {
 			} catch (IOException e) {
 				throw new MojoExecutionException(String.format("Error opening %s", file.getPath()), e);
 			}
-
 		}
 	}
 

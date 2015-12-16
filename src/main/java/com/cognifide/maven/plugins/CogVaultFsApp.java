@@ -16,9 +16,6 @@ import org.apache.jackrabbit.vault.util.console.CliCommand;
 import org.apache.jackrabbit.vault.util.console.ExecutionException;
 import org.apache.jackrabbit.vault.util.console.util.Log4JConfig;
 
-/**
- * Author: mariusz.kubis Date: 20.08.14
- */
 public class CogVaultFsApp extends VaultFsApp {
 
 	private Option optLogLevel;
@@ -59,27 +56,23 @@ public class CogVaultFsApp extends VaultFsApp {
 				.withOption(CliCommand.OPT_VERBOSE).withOption(CliCommand.OPT_QUIET).withOption(optVersion)
 				.withOption(optLogLevel).withOption(optHelp).withMinimum(0);
 
-		optCreds = new DefaultOptionBuilder()
-				.withLongName("credentials")
+		optCreds = new DefaultOptionBuilder().withLongName("credentials")
 				.withDescription("The default credentials to use")
-				.withArgument(
-						new ArgumentBuilder()
-								.withDescription(
-										"Format: <user:pass>. If missing an anonymous login is used. "
-												+ "If the password is not specified it is prompted via console.")
-								.withMinimum(0).withMaximum(1).create()).create();
+				.withArgument(new ArgumentBuilder()
+						.withDescription("Format: <user:pass>. If missing an anonymous login is used. "
+								+ "If the password is not specified it is prompted via console.")
+						.withMinimum(0).withMaximum(1).create())
+				.create();
 
-		optUpdateCreds = new DefaultOptionBuilder()
-				.withLongName("update-credentials")
+		optUpdateCreds = new DefaultOptionBuilder().withLongName("update-credentials")
 				.withDescription(
 						"if present the credentials-to-host list is updated in the ~/.vault/auth.xml")
 				.create();
-		optConfig = new DefaultOptionBuilder()
-				.withLongName("config")
+		optConfig = new DefaultOptionBuilder().withLongName("config")
 				.withDescription("The JcrFs config to use")
-				.withArgument(
-						new ArgumentBuilder().withDescription("If missing the default config is used.")
-								.withMinimum(0).withMaximum(1).create()).create();
+				.withArgument(new ArgumentBuilder().withDescription("If missing the default config is used.")
+						.withMinimum(0).withMaximum(1).create())
+				.create();
 
 		// register extended options
 		for (ExtendedOption x : xOpts) {
@@ -135,4 +128,5 @@ public class CogVaultFsApp extends VaultFsApp {
 			close();
 		}
 	}
+
 }

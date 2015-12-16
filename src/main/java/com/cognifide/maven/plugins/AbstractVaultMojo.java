@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.LinkedList;
 import java.util.List;
 
-import org.apache.commons.lang.ArrayUtils;
+import org.apache.commons.lang3.ArrayUtils;
 import org.apache.maven.plugin.AbstractMojo;
 import org.apache.maven.plugins.annotations.Parameter;
 
@@ -25,10 +25,11 @@ public abstract class AbstractVaultMojo extends AbstractMojo {
 
 	protected void executeVaultCommand(String command, String... additionalParameters) {
 		List<String> parameters = new LinkedList<String>();
-		parameters.addAll(Arrays.asList(new String[] { "--credentials", user + ":" + password, command,
-				"--force" }));
+		parameters.addAll(
+				Arrays.asList(new String[] { "--credentials", user + ":" + password, command, "--force" }));
 		Collections.addAll(parameters, additionalParameters);
 		System.out.println("Invoking: vlt" + parameters);
 		CogVaultFsApp.main(parameters.toArray(ArrayUtils.EMPTY_STRING_ARRAY));
 	}
+
 }
