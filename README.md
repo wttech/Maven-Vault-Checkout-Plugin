@@ -22,7 +22,7 @@ Add plugin to your POM file:
 </plugin>
 ```
 
-### Commands
+#### Commands
 
 | Command description | Maven command            |  Description                                                       |
 |---------------------|--------------------------|--------------------------------------------------------------------|
@@ -30,7 +30,7 @@ Add plugin to your POM file:
 | Clean               | mvn vltco:clean          | Removes .vlt files. Cleans content.xml from unnecessary properties |
 | Clean checkout      | mvn vltco:clean-checkout | Wrapper for vlt checkout. After checkout removes .vlt files. Cleans content.xml from unnecessary properties |
 
-### Configuration
+#### Configuration
 
 | Parameter name  | Description                               | Default value         |
 |-----------------|-------------------------------------------|-----------------------|
