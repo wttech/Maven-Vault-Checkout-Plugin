@@ -51,10 +51,9 @@ public class CogVaultFsApp extends VaultFsApp {
 		optLogLevel = obuilder.withLongName("log-level").withDescription("the log4j log level")
 				.withArgument(abuilder.withName("level").withMaximum(1).create()).create();
 
-		gbuilder.withName("Global options:")
-				// .withOption(optPropertyFile)
-				.withOption(CliCommand.OPT_VERBOSE).withOption(CliCommand.OPT_QUIET).withOption(optVersion)
-				.withOption(optLogLevel).withOption(optHelp).withMinimum(0);
+		gbuilder.withName("Global options:").withOption(CliCommand.OPT_VERBOSE)
+				.withOption(CliCommand.OPT_QUIET).withOption(optVersion).withOption(optLogLevel)
+				.withOption(optHelp).withMinimum(0);
 
 		optCreds = new DefaultOptionBuilder().withLongName("credentials")
 				.withDescription("The default credentials to use")
@@ -92,7 +91,7 @@ public class CogVaultFsApp extends VaultFsApp {
 		// setup logging
 		try {
 			initLogging();
-		} catch (Throwable e) {
+		} catch (Exception e) {
 			System.err.println("Error while initializing logging: " + e);
 		}
 
