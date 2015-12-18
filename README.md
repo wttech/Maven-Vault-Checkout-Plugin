@@ -32,9 +32,10 @@ Add plugin to your POM file:
 
 #### Configuration
 
-| Parameter name  | Description                               | Default value         |
-|-----------------|-------------------------------------------|-----------------------|
-| vltco.srcdir    | directory for the content to be stored in | src/main/cq/jcr_root  |
-| vltco.url       | instance url                              | http://localhost:4502 |
-| vltco.user      | user name                                 | admin                 |
-| vltco.password  | user password                             | admin                 |
+| Parameter name  | Description                               | Default value                         |
+|-----------------|-------------------------------------------|---------------------------------------|
+| vltco.srcdir    | directory for the content to be stored in | src/main/cq/jcr_root                  |
+| vltco.url       | instance url                              | http://localhost:4502                 |
+| vltco.user      | user name                                 | admin                                 |
+| vltco.password  | user password                             | admin                                 |
+| vltco.filter    | filter file location                      | src/main/cq/META-INF/vault/filter.xml |
