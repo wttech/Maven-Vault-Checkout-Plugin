@@ -11,8 +11,8 @@ import org.apache.maven.plugins.annotations.Parameter;
 
 public abstract class AbstractVaultMojo extends AbstractMojo {
 
-	@Parameter(property = "vltco.srcdir", defaultValue = "src/main/cq/jcr_root/")
-	protected String srcdir;
+	@Parameter(property = "vltco.destdir", defaultValue = "src/main/cq/jcr_root/")
+	protected String destdir;
 
 	@Parameter(property = "vltco.url", defaultValue = "http://localhost:4502", required = true)
 	protected String url;

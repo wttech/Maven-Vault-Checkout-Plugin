@@ -34,7 +34,7 @@ Add plugin to your POM file:
 
 | Parameter name  | Description                               | Default value                         |
 |-----------------|-------------------------------------------|---------------------------------------|
-| vltco.srcdir    | directory for the content to be stored in | src/main/cq/jcr_root                  |
+| vltco.destdir   | directory for the content to be stored in | src/main/cq/jcr_root                  |
 | vltco.url       | instance url                              | http://localhost:4502                 |
 | vltco.user      | user name                                 | admin                                 |
 | vltco.password  | user password                             | admin                                 |

@@ -10,8 +10,8 @@ public class CleanCheckout extends Checkout {
 
 	public void execute() throws MojoExecutionException {
 		super.execute();
-		ProjectUtils.removeVltFiles(srcdir);
-		ProjectUtils.cleanupDotContent(srcdir);
+		ProjectUtils.removeVltFiles(destdir);
+		ProjectUtils.cleanupDotContent(destdir);
 	}
 
 }

@@ -10,8 +10,8 @@ import com.cognifide.maven.utils.ProjectUtils;
 public class Clean extends AbstractVaultMojo {
 
 	public void execute() throws MojoExecutionException {
-		ProjectUtils.removeVltFiles(srcdir);
-		ProjectUtils.cleanupDotContent(srcdir);
+		ProjectUtils.removeVltFiles(destdir);
+		ProjectUtils.cleanupDotContent(destdir);
 	}
 
 }

@@ -16,9 +16,9 @@ public class Checkout extends AbstractVaultMojo {
 
 	public void execute() throws MojoExecutionException {
 		if (new File(filter).exists()) {
-			executeVaultCommand("checkout", "-f", filter, url, "/", srcdir);
+			executeVaultCommand("checkout", "-f", filter, url, "/", destdir);
 		} else {
-			executeVaultCommand("checkout", url, "/", srcdir);
+			executeVaultCommand("checkout", url, "/", destdir);
 		}
 	}
 
