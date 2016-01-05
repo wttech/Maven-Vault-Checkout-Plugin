@@ -8,6 +8,7 @@ import java.util.List;
 import org.apache.commons.io.FileUtils;
 import org.apache.commons.io.filefilter.NameFileFilter;
 import org.apache.commons.io.filefilter.TrueFileFilter;
+import org.apache.commons.lang3.CharEncoding;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.maven.plugin.MojoExecutionException;
 import org.slf4j.Logger;
@@ -31,7 +32,7 @@ public class ProjectUtils {
 			try {
 				LOG.info("Cleaning up {}", file.getPath());
 				List<String> lines = new ArrayList<String>();
-				for (String line : FileUtils.readLines(file, "UTF-8")) {
+				for (String line : FileUtils.readLines(file, CharEncoding.UTF_8)) {
 					String cleanLine = StringUtils.trimToEmpty(line);
 					String[] properties = { "jcr:lastModified", "jcr:created", "cq:lastModified",
 							"cq:lastReplicat", "jcr:uuid" };
@@ -46,7 +47,7 @@ public class ProjectUtils {
 						lines.add(line);
 					}
 				}
-				FileUtils.writeLines(file, "UTF-8", lines);
+				FileUtils.writeLines(file, CharEncoding.UTF_8, lines);
 			} catch (IOException e) {
 				throw new MojoExecutionException(String.format("Error opening %s", file.getPath()), e);
 			}
