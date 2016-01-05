@@ -10,13 +10,17 @@ import org.apache.commons.io.filefilter.NameFileFilter;
 import org.apache.commons.io.filefilter.TrueFileFilter;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.maven.plugin.MojoExecutionException;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ProjectUtils {
+
+	protected static final Logger LOG = LoggerFactory.getLogger(ProjectUtils.class);
 
 	public static void removeVltFiles(String root) {
 		for (File file : FileUtils.listFiles(new File(root), new NameFileFilter(".vlt"),
 				TrueFileFilter.INSTANCE)) {
-			System.out.println("Deleting " + file.getPath());
+			LOG.info("Deleting {}", file.getPath());
 			FileUtils.deleteQuietly(file);
 		}
 	}
@@ -25,7 +29,7 @@ public class ProjectUtils {
 		for (File file : FileUtils.listFiles(new File(root), new NameFileFilter(".content.xml"),
 				TrueFileFilter.INSTANCE)) {
 			try {
-				System.out.println("Cleaning up " + file.getPath());
+				LOG.info("Cleaning up {}", file.getPath());
 				List<String> lines = new ArrayList<String>();
 				for (String line : FileUtils.readLines(file, "UTF-8")) {
 					String cleanLine = StringUtils.trimToEmpty(line);
