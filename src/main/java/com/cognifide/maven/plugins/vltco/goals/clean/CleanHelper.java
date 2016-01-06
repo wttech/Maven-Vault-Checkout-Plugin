@@ -1,4 +1,4 @@
-package com.cognifide.maven.plugins.vltco.utils;
+package com.cognifide.maven.plugins.vltco.goals.clean;
 
 import java.io.File;
 import java.io.IOException;
@@ -14,9 +14,12 @@ import org.apache.maven.plugin.MojoExecutionException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public class ProjectUtils {
+public final class CleanHelper {
 
-	protected static final Logger LOG = LoggerFactory.getLogger(ProjectUtils.class);
+	private static final Logger LOG = LoggerFactory.getLogger(CleanHelper.class);
+
+	private CleanHelper() {
+	}
 
 	public static void removeVltFiles(String root) {
 		for (File file : FileUtils.listFiles(new File(root), new NameFileFilter(".vlt"),
@@ -63,5 +66,4 @@ public class ProjectUtils {
 		}
 		return contains;
 	}
-
 }

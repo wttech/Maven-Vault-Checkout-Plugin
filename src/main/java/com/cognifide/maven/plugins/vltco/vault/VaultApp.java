@@ -14,7 +14,7 @@ public class VaultApp extends VaultFsApp {
 
 	@Override
 	protected ExecutionContext getDefaultContext() {
-		if(defaultContext == null) {
+		if (defaultContext == null) {
 			defaultContext = new VaultExecutionContext(this);
 			defaultContext.installCommand(new CmdConsole());
 		}

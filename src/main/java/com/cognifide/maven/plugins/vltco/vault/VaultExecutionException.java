@@ -8,16 +8,20 @@ public class VaultExecutionException extends RuntimeException {
 		super();
 	}
 
-	public VaultExecutionException(String message, Throwable cause) {
-		super(message, cause);
-	}
-
 	public VaultExecutionException(String message) {
 		super(message);
+	}
+
+	public VaultExecutionException(String message, Throwable cause) {
+		super(message, cause);
 	}
 
 	public VaultExecutionException(Throwable cause) {
 		super(cause);
 	}
 
+	protected VaultExecutionException(String message, Throwable cause, boolean enableSuppression,
+			boolean writableStackTrace) {
+		super(message, cause, enableSuppression, writableStackTrace);
+	}
 }

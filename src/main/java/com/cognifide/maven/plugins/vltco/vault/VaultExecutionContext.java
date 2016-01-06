@@ -9,9 +9,9 @@ import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.ExecutionException;
 
-public class VaultExecutionContext extends VltExecutionContext {
+class VaultExecutionContext extends VltExecutionContext {
 
-	private static final Logger log = LoggerFactory.getLogger(VaultExecutionContext.class);
+	private static final Logger LOG = LoggerFactory.getLogger(VaultExecutionContext.class);
 
 	public VaultExecutionContext(VaultApp app) {
 		super(app);
@@ -26,13 +26,11 @@ public class VaultExecutionContext extends VltExecutionContext {
 					if (doExecute(cliCommand, commandLine)) {
 						return true;
 					}
-				}
-				catch (ExecutionException ex) {
-					log.error("TBC", ex);
+				} catch (ExecutionException ex) {
+					LOG.error("Error while executing command", ex);
 					throw new VaultExecutionException(ex);
-				}
-				catch (Exception e) {
-					log.error("TBC", e);
+				} catch (Exception e) {
+					LOG.error("Error while executing command", e);
 					throw new VaultExecutionException(e);
 				}
 			}
