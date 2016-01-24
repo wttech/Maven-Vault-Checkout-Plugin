@@ -7,8 +7,20 @@
     <version>0.2.0-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
-    <name>vltco-maven-plugin Maven Plugin</name>
-    <url>http://maven.apache.org</url>
+    <name>Maven Vault Checkout Plugin</name>
+
+    <organization>
+        <name>Cognifide Limited</name>
+        <url>http://www.cognifide.com</url>
+    </organization>
+
+    <licenses>
+        <license>
+            <name>The Apache Software License, Version 2.0</name>
+            <url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
+            <distribution>repo</distribution>
+        </license>
+    </licenses>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -82,18 +94,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-deploy-plugin</artifactId>
                 <version>2.8.2</version>
-            </plugin>
-            <plugin>
-                <artifactId>maven-release-plugin</artifactId>
-                <version>2.5</version>
-                <configuration>
-                    <autoVersionSubmodules>true</autoVersionSubmodules>
-                    <releaseProfiles>release</releaseProfiles>
-                    <goals>deploy</goals>
-                    <username>${scm.username}</username>
-                    <password>${scm.password}</password>
-                    <tagNameFormat>v@{project.version}</tagNameFormat>
-                </configuration>
             </plugin>
         </plugins>
     </build>
