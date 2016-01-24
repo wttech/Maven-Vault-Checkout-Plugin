@@ -29,7 +29,7 @@ public final class CleanHelper {
 		}
 	}
 
-	public static void cleanupDotContent(String root) throws MojoExecutionException {
+	public static void cleanupDotContent(String root, String[] contentProperties) throws MojoExecutionException {
 		for (File file : FileUtils.listFiles(new File(root), new NameFileFilter(".content.xml"),
 				TrueFileFilter.INSTANCE)) {
 			try {
@@ -37,9 +37,7 @@ public final class CleanHelper {
 				List<String> lines = new ArrayList<String>();
 				for (String line : FileUtils.readLines(file, CharEncoding.UTF_8)) {
 					String cleanLine = StringUtils.trimToEmpty(line);
-					String[] properties = { "jcr:lastModified", "jcr:created", "cq:lastModified",
-							"cq:lastReplicat", "jcr:uuid" };
-					boolean lineContains = lineContainsProperty(cleanLine, properties);
+					boolean lineContains = lineContainsProperty(cleanLine, contentProperties);
 					if (lineContains) {
 						if (!cleanLine.endsWith(">")) {
 						} else {
@@ -57,10 +55,10 @@ public final class CleanHelper {
 		}
 	}
 
-	private static boolean lineContainsProperty(String cleanLine, String[] properties) {
+	private static boolean lineContainsProperty(String cleanLine, String[] contentProperties) {
 		boolean contains = false;
-		for (String property : properties) {
-			if (cleanLine.startsWith(property)) {
+		for (String contentProperty : contentProperties) {
+			if (cleanLine.startsWith(contentProperty)) {
 				contains = true;
 			}
 		}

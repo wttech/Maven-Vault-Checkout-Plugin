@@ -19,7 +19,7 @@ public abstract class AbstractCheckout extends AbstractVaultMojo {
 
 	protected static final String CHECKOUT_COMMAND = "checkout";
 
-	@Parameter(property = "vltco.filter", defaultValue = "src/main/cq/META-INF/vault/filter.xml")
+	@Parameter(property = "vltco.filter", defaultValue = "src/main/aem/META-INF/vault/filter.xml")
 	protected String filter;
 
 	@Parameter(property = "vltco.uri", defaultValue = "http://localhost:4502", required = true)

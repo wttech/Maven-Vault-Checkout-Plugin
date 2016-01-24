@@ -7,8 +7,9 @@ import org.apache.maven.plugins.annotations.Mojo;
 @Mojo(name = "clean")
 public class Clean extends AbstractVaultMojo {
 
+	@Override
 	public void execute() throws MojoExecutionException {
 		CleanHelper.removeVltFiles(localPath);
-		CleanHelper.cleanupDotContent(localPath);
+		CleanHelper.cleanupDotContent(localPath, contentProperties);
 	}
 }

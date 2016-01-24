@@ -7,9 +7,10 @@ import org.apache.maven.plugins.annotations.Mojo;
 @Mojo(name = "clean-checkout")
 public class CleanCheckout extends AbstractCheckout {
 
+	@Override
 	public void execute() throws MojoExecutionException {
 		runCheckoutCommand();
 		CleanHelper.removeVltFiles(localPath);
-		CleanHelper.cleanupDotContent(localPath);
+		CleanHelper.cleanupDotContent(localPath, contentProperties);
 	}
 }
