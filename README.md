@@ -1,41 +1,82 @@
-# Maven Vault Plugin
+# Maven Vault Checkout Plugin
 
-## Overview
+## Purpose
+This is a plugin designed for Maven 2.x+ based builds to automate content checkout process.
+It allows to set up content checkout, and remove some unnecessary properties from .content.xml files.
+
+## Features
+* downloads content(using vlt) from CQ/AEM instance
+* removes .vlt files
+* removes properties from .content.xml files
+
+## Prerequisites
+* Maven 2.x, 3.x
 
 ## Installation
+Checkout the source code:
+
+    cd [folder of your choice]
+    git clone git://github.com/Cognifide/Maven-VLTCO-Plugin.git
+    cd Maven-VLTCO-Plugin
 
 Compile and install:
 
-```
-mvn clean install
-```
+    mvn clean install
 
 ## Usage
-
-Add plugin to your POM file:
+Set up POM file:
 
 ```xml
-<plugin>
-	<groupId>com.cognifide.maven.plugins</groupId>
-	<artifactId>vltco-maven-plugin</artifactId>
-	<version>0.2.0</version>
-</plugin>
+    (...)
+    <plugin>
+        <groupId>com.cognifide.maven.plugins</groupId>
+        <artifactId>vltco-maven-plugin</artifactId>
+        <version>0.2.0</version>
+        <configuration>
+            <uri>http://localhost:4503</uri>
+            <user>author</user>
+            <password>author</password>
+            <localPath>src/main/content/jcr_root</localPath>
+            <filter>src/main/content/jcr_root</filter>
+            <!-- custom content properties that will be removed from .content.xml during clean goal -->
+            <contentProperties>
+                <contentProperty>my:contentProperty</contentProperty
+            </contentProperties>
+        </configuration>
+    </plugin>
+    (...)
 ```
 
-#### Commands
+Now you can invoke one of the Maven Vault Checkout Plugin goals:
+* to checkout content from instance use
 
-| Command description | Maven command            |  Description                                                       |
-|---------------------|--------------------------|--------------------------------------------------------------------|
-| Checkout            | mvn vltco:checkout       | Wrapper for vlt checkout                                           |
-| Clean               | mvn vltco:clean          | Removes .vlt files. Cleans content.xml from unnecessary properties |
-| Clean checkout      | mvn vltco:clean-checkout | Wrapper for vlt checkout. After checkout removes .vlt files. Cleans content.xml from unnecessary properties |
+        mvn vltco:checkout
 
-#### Configuration
+* to remove .vlt files and cleans content.xml from unnecessary properties use (default properties are: jcr:uuid, jcr:lastModified, jcr:lastModifiedBy, jcr:created, jcr:createdBy, cq:lastModified, cq:lastModifiedBy, cq:lastReplicated, cq:lastReplicatedBy, cq:lastReplicationAction, cq:lastReplicationStatus)
 
-| Parameter name  | Description                               | Default value                         |
-|-----------------|-------------------------------------------|---------------------------------------|
-| vltco.localPath | directory for the content to be stored in | src/main/cq/jcr_root                  |
-| vltco.uri       | instance uri                              | http://localhost:4502                 |
-| vltco.user      | user name                                 | admin                                 |
-| vltco.password  | user password                             | admin                                 |
-| vltco.filter    | filter file location                      | src/main/cq/META-INF/vault/filter.xml |
+        mvn vltco:clean
+
+* to checkout and remove .vlt files and cleans content.xml from unnecessary properties use
+
+        mvn vltco:clean-checkout
+
+## Configuration
+Maven Vault Checkout Plugin can be configured using <configuration> element (see Usage sample above) with following tags:
+
+| Parameter name | Default value | Description |
+|----------------|---------------|-------------|
+| uri | http://localhost:4502 | instance uri |
+| user | admin | user name |
+| password | admin | user password |
+| localPath | src/main/aem/jcr_root | directory for the content to be stored in |
+| filter | src/main/aem/META-INF/vault/filter.xml | filter file location |
+| contentProperties | jcr:uuid, jcr:lastModified, jcr:lastModifiedBy, jcr:created, jcr:createdBy, cq:lastModified, cq:lastModifiedBy, cq:lastReplicated, cq:lastReplicatedBy, cq:lastReplicationAction, cq:lastReplicationStatus | list of properties that will be remove from .content.xml files during clean goal |
+
+## Commercial Support
+Technical support can be made available if needed. Please [contact us](mailto:labs-support@cognifide.com) for more details.
+
+We can:
+* prioritize your feature request,
+* tailor the product to your needs,
+* provide a training for your engineers,
+* support your development teams.
