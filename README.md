@@ -18,7 +18,7 @@ Checkout the source code:
 
     cd [folder of your choice]
     git clone git://github.com/Cognifide/Maven-Vault-Checkout-Plugin.git
-    cd Maven-VLTCO-Plugin
+    cd Maven-Vault-Checkout-Plugin
 
 Compile and install:
 
