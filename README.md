@@ -1,3 +1,4 @@
+![Cognifide logo](http://cognifide.github.io/images/cognifide-logo.png)
 # Maven Vault Checkout Plugin
 
 ## Purpose
@@ -40,7 +41,7 @@ Set up POM file:
             <filter>src/main/content/jcr_root</filter>
             <!-- custom content properties that will be removed from .content.xml during clean goal -->
             <contentProperties>
-                <contentProperty>my:contentProperty</contentProperty
+                <contentProperty>my:contentProperty</contentProperty>
             </contentProperties>
         </configuration>
     </plugin>
