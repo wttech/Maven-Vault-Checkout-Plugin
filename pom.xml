@@ -27,9 +27,9 @@
     </properties>
 
     <scm>
-        <connection>scm:git:ssh://git@stash.cognifide.com/rnd/maven-vault-plugin.git</connection>
-        <developerConnection>scm:git:ssh://git@stash.cognifide.com/rnd/maven-vault-plugin.git</developerConnection>
-        <url>https://stash.cognifide.com/projects/RND/repos/maven-vault-plugin</url>
+        <connection>scm:git:git@github.com:Cognifide/Maven-Vault-Checkout-Plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:Cognifide/Maven-Vault-Checkout-Plugin.git</developerConnection>
+        <url>https://github.com/Cognifide/Maven-Vault-Checkout-Plugin</url>
         <tag>HEAD</tag>
     </scm>
 

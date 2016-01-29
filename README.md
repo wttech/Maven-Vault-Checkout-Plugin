@@ -17,7 +17,7 @@ It allows to set up content checkout, and remove some unnecessary properties fro
 Checkout the source code:
 
     cd [folder of your choice]
-    git clone git://github.com/Cognifide/Maven-VLTCO-Plugin.git
+    git clone git://github.com/Cognifide/Maven-Vault-Checkout-Plugin.git
     cd Maven-VLTCO-Plugin
 
 Compile and install:
