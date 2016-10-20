@@ -10,6 +10,7 @@
     <description>
         Plugin designed for Maven 2.x+ based builds to automate content checkout from AEM.
     </description>
+    <url>https://github.com/Cognifide/Maven-Vault-Checkout-Plugin</url>
 
     <organization>
         <name>Cognifide</name>
