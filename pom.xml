@@ -9,9 +9,12 @@
     <packaging>maven-plugin</packaging>
 
     <name>Maven Vault Checkout Plugin</name>
+    <description>
+        Plugin designed for Maven 2.x+ based builds to automate content checkout from AEM.
+    </description>
 
     <organization>
-        <name>Cognifide Limited</name>
+        <name>Cognifide</name>
         <url>http://www.cognifide.com</url>
     </organization>
 
@@ -22,6 +25,16 @@
             <distribution>repo</distribution>
         </license>
     </licenses>
+
+    <developers>
+        <developer>
+            <id>lmatyja</id>
+            <name>Łukasz Matyja</name>
+            <email>lukasz.matyja@cognifide.com</email>
+            <organization>Cognifide</organization>
+            <organizationUrl>http://www.cognifide.com</organizationUrl>
+        </developer>
+    </developers>
 
     <scm>
         <connection>scm:git:git@github.com:Cognifide/Maven-Vault-Checkout-Plugin.git</connection>
