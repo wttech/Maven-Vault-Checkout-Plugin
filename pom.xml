@@ -31,6 +31,11 @@
     </scm>
 
     <properties>
+        <!--
+          this property should be overwritten from commandline
+        -->
+        <gpg.keyname>9A105524</gpg.keyname>
+
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -98,4 +103,66 @@
             </plugin>
         </plugins>
     </build>
+
+    <profiles>
+        <profile>
+            <id>release</id>
+            <build>
+                <plugins>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-source-plugin</artifactId>
+                        <version>2.4</version>
+                        <executions>
+                            <execution>
+                                <id>attach-sources</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-javadoc-plugin</artifactId>
+                        <version>2.10.4</version>
+                        <executions>
+                            <execution>
+                                <id>attach-javadocs</id>
+                                <goals>
+                                    <goal>jar</goal>
+                                </goals>
+                            </execution>
+                        </executions>
+                    </plugin>
+                    <plugin>
+                        <groupId>org.apache.maven.plugins</groupId>
+                        <artifactId>maven-gpg-plugin</artifactId>
+                        <version>1.6</version>
+                        <executions>
+                            <execution>
+                                <id>sign-artifacts</id>
+                                <phase>verify</phase>
+                                <goals>
+                                    <goal>sign</goal>
+                                </goals>
+                                <configuration>
+                                    <!--
+                                      this should be overwritten during signing AET artifacts
+                                      with -Dgpg.keyname
+                                      but when used with maven-release-plugin
+                                      -Darguments="-Dgpg.keyname" should be used
+                                      see http://maven.apache.org/plugins/maven-gpg-plugin/sign-mojo.html#keyname
+                                      and http://maven.apache.org/maven-release/maven-release-plugin/prepare-mojo.html#arguments
+                                    -->
+                                    <keyname>${gpg.keyname}</keyname>
+                                    <executable>gpg2</executable>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
 </project>
