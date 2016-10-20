@@ -30,6 +30,15 @@
         <url>https://github.com/Cognifide/Maven-Vault-Checkout-Plugin</url>
     </scm>
 
+    <!-- please add sonatype credentials in your user settings.xml file -->
+    <distributionManagement>
+        <repository>
+            <id>oss.sonatype.org</id>
+            <name>Sonatype Staging Repository</name>
+            <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
+        </repository>
+    </distributionManagement>
+
     <properties>
         <!--
           this property should be overwritten from commandline
