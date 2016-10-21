@@ -33,6 +33,13 @@
             <organization>Cognifide</organization>
             <organizationUrl>http://www.cognifide.com</organizationUrl>
         </developer>
+        <developer>
+            <id>spiochacz</id>
+            <name>Sławomir Piochacz</name>
+            <email>slawomir.piochacz@cognifide.com</email>
+            <organization>Cognifide</organization>
+            <organizationUrl>http://www.cognifide.com</organizationUrl>
+        </developer>
     </developers>
 
     <scm>
