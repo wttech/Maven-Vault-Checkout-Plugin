@@ -12,6 +12,7 @@ It allows to set up content checkout, and remove some unnecessary properties fro
 
 ## Prerequisites
 * Maven 2.x, 3.x
+* FileVault 3.1.0 or higher
 
 ## Installation
 Checkout the source code:
