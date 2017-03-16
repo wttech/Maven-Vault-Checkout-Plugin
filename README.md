@@ -32,13 +32,13 @@ Set up POM file:
     <plugin>
         <groupId>com.cognifide.maven.plugins</groupId>
         <artifactId>vltco-maven-plugin</artifactId>
-        <version>0.2.0</version>
+        <version>0.2.1</version>
         <configuration>
-            <uri>http://localhost:4503</uri>
+            <uri>http://localhost:4502</uri>
             <user>author</user>
             <password>author</password>
             <localPath>src/main/content/jcr_root</localPath>
-            <filter>src/main/content/jcr_root</filter>
+            <filter>src/main/content/META-INF/vault/filter.xml</filter>
             <!-- custom content properties that will be removed from .content.xml during clean goal -->
             <contentProperties>
                 <contentProperty>my:contentProperty</contentProperty>
