@@ -55,14 +55,14 @@ public final class CleanHelper {
 						lines.add(line);
 					}
 				}
-				FileUtils.writeLines(file, CharEncoding.UTF_8, lines, getLineEnding(lineEnding));
+				FileUtils.writeLines(file, CharEncoding.UTF_8, lines, getLineEndingChar(lineEnding));
 			} catch (IOException e) {
 				throw new MojoExecutionException(String.format("Error opening %s", file.getPath()), e);
 			}
 		}
 	}
 
-	private static String getLineEnding(String lineEnding) {
+	private static String getLineEndingChar(String lineEnding) {
 		String ending = null;
 		if (StringUtils.equals(lineEnding, UNIX)) {
 			ending = UNIX_LINE_ENDING;
