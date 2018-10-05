@@ -17,9 +17,13 @@ import org.slf4j.LoggerFactory;
 public final class CleanHelper {
 
 	private static final Logger LOG = LoggerFactory.getLogger(CleanHelper.class);
+	
 	private static final String UNIX = "unix";
+
 	private static final String DOS = "dos";
+
 	private static final String UNIX_LINE_ENDING = "\n";
+
 	private static final String DOS_LINE_ENDING = "\r\n";
 
 	private CleanHelper() {
@@ -51,17 +55,21 @@ public final class CleanHelper {
 						lines.add(line);
 					}
 				}
-				String line = null;
-				if (StringUtils.equals(lineEnding, UNIX)) {
-					line = UNIX_LINE_ENDING;
-				} else if (StringUtils.equals(lineEnding, DOS)) {
-					line = DOS_LINE_ENDING;
-				}
-				FileUtils.writeLines(file, CharEncoding.UTF_8, lines, line);
+				FileUtils.writeLines(file, CharEncoding.UTF_8, lines, getLineEnding(lineEnding));
 			} catch (IOException e) {
 				throw new MojoExecutionException(String.format("Error opening %s", file.getPath()), e);
 			}
 		}
+	}
+
+	private static String getLineEnding(String lineEnding) {
+		String ending = null;
+		if (StringUtils.equals(lineEnding, UNIX)) {
+			ending = UNIX_LINE_ENDING;
+		} else if (StringUtils.equals(lineEnding, DOS)) {
+			ending = DOS_LINE_ENDING;
+		}
+		return ending;
 	}
 
 	private static boolean lineContainsProperty(String cleanLine, String[] contentProperties) {
