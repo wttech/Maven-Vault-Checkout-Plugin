@@ -37,6 +37,7 @@ Set up POM file:
             <uri>http://localhost:4503</uri>
             <user>author</user>
             <password>author</password>
+            <lineEnding>unix</lineEnding>
             <localPath>src/main/content/jcr_root</localPath>
             <filter>src/main/content/jcr_root</filter>
             <!-- custom content properties that will be removed from .content.xml during clean goal -->
@@ -71,6 +72,7 @@ Maven Vault Checkout Plugin can be configured using <configuration> element (see
 | password | admin | user password |
 | localPath | src/main/aem/jcr_root | directory for the content to be stored in |
 | filter | src/main/aem/META-INF/vault/filter.xml | filter file location |
+| lineEnding | default | can be unix, dos, defualt is system default|
 | contentProperties | jcr:uuid, jcr:lastModified, jcr:lastModifiedBy, jcr:created, jcr:createdBy, cq:lastModified, cq:lastModifiedBy, cq:lastReplicated, cq:lastReplicatedBy, cq:lastReplicationAction, cq:lastReplicationStatus | list of properties that will be remove from .content.xml files during clean goal |
 
 ## Commercial Support

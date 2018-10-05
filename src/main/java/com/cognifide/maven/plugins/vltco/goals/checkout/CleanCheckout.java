@@ -11,6 +11,6 @@ public class CleanCheckout extends AbstractCheckout {
 	public void execute() throws MojoExecutionException {
 		runCheckoutCommand();
 		CleanHelper.removeVltFiles(localPath);
-		CleanHelper.cleanupDotContent(localPath, contentProperties);
+		CleanHelper.cleanupDotContent(localPath, lineEnding,contentProperties);
 	}
 }

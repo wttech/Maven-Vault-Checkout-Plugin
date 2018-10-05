@@ -3,7 +3,7 @@
 
     <groupId>com.cognifide.maven.plugins</groupId>
     <artifactId>vltco-maven-plugin</artifactId>
-    <version>0.2.2-SNAPSHOT</version>
+    <version>0.2.3-SNAPSHOT</version>
     <packaging>maven-plugin</packaging>
 
     <name>Maven Vault Checkout Plugin</name>

@@ -8,6 +8,9 @@ public abstract class AbstractVaultMojo extends AbstractMojo {
 
 	@Parameter(property = "vltco.localPath", defaultValue = "src/main/aem/jcr_root")
 	protected String localPath;
+	
+	@Parameter(property = "vltco.lineEnding", defaultValue = "default")
+	protected String lineEnding;
 
 	@Parameter(property = "vltco.contentProperties")
 	protected String[] contentProperties = { "jcr:lastModified", "jcr:created", "cq:lastModified", "cq:lastReplicat",

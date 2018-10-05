@@ -17,21 +17,24 @@ import org.slf4j.LoggerFactory;
 public final class CleanHelper {
 
 	private static final Logger LOG = LoggerFactory.getLogger(CleanHelper.class);
+	private static final String UNIX = "unix";
+	private static final String DOS = "dos";
+	private static final String UNIX_LINE_ENDING = "\n";
+	private static final String DOS_LINE_ENDING = "\r\n";
 
 	private CleanHelper() {
 	}
 
 	public static void removeVltFiles(String root) {
-		for (File file : FileUtils.listFiles(new File(root), new NameFileFilter(".vlt"),
-				TrueFileFilter.INSTANCE)) {
+		for (File file : FileUtils.listFiles(new File(root), new NameFileFilter(".vlt"), TrueFileFilter.INSTANCE)) {
 			LOG.info("Deleting {}", file.getPath());
 			FileUtils.deleteQuietly(file);
 		}
 	}
 
-	public static void cleanupDotContent(String root, String[] contentProperties) throws MojoExecutionException {
-		for (File file : FileUtils.listFiles(new File(root), new NameFileFilter(".content.xml"),
-				TrueFileFilter.INSTANCE)) {
+	public static void cleanupDotContent(String root, String lineEnding, String[] contentProperties)
+		throws MojoExecutionException {
+		for (File file : FileUtils.listFiles(new File(root), new NameFileFilter(".content.xml"), TrueFileFilter.INSTANCE)) {
 			try {
 				LOG.info("Cleaning up {}", file.getPath());
 				List<String> lines = new ArrayList<String>();
@@ -48,7 +51,13 @@ public final class CleanHelper {
 						lines.add(line);
 					}
 				}
-				FileUtils.writeLines(file, CharEncoding.UTF_8, lines);
+				String line = null;
+				if (StringUtils.equals(lineEnding, UNIX)) {
+					line = UNIX_LINE_ENDING;
+				} else if (StringUtils.equals(lineEnding, DOS)) {
+					line = DOS_LINE_ENDING;
+				}
+				FileUtils.writeLines(file, CharEncoding.UTF_8, lines, line);
 			} catch (IOException e) {
 				throw new MojoExecutionException(String.format("Error opening %s", file.getPath()), e);
 			}

@@ -10,6 +10,6 @@ public class Clean extends AbstractVaultMojo {
 	@Override
 	public void execute() throws MojoExecutionException {
 		CleanHelper.removeVltFiles(localPath);
-		CleanHelper.cleanupDotContent(localPath, contentProperties);
+		CleanHelper.cleanupDotContent(localPath, lineEnding,  contentProperties);
 	}
 }
