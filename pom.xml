@@ -79,7 +79,7 @@
         <dependency>
             <groupId>org.apache.jackrabbit.vault</groupId>
             <artifactId>vault-cli</artifactId>
-            <version>3.1.24</version>
+            <version>3.4.2</version>
         </dependency>
         <dependency>
             <groupId>org.apache.maven</groupId>
@@ -123,7 +123,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-plugin-plugin</artifactId>
-                <version>3.4</version>
+                <version>3.6.0</version>
                 <executions>
                     <execution>
                         <id>mojo-descriptor</id>
