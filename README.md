@@ -1,4 +1,4 @@
-![Wunderman Thompson Technology logo](./assets/wtt-logo.png)
+![Wunderman Thompson Technology logo](./assets/logo.png)
 # Maven Vault Checkout Plugin
 
 ## Purpose
