@@ -1,4 +1,4 @@
-![Cognifide logo](https://assets.cognifide.com/github/cognifide-logo.png)
+![Wunderman Thompson Technology logo](./assets/wtt-logo.png)
 # Maven Vault Checkout Plugin
 
 ## Purpose

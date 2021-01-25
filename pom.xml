@@ -10,10 +10,10 @@
     <description>
         Plugin designed for Maven 2.x+ based builds to automate content checkout from AEM.
     </description>
-    <url>https://github.com/Cognifide/Maven-Vault-Checkout-Plugin</url>
+    <url>https://github.com/wttech/Maven-Vault-Checkout-Plugin</url>
 
     <organization>
-        <name>Cognifide</name>
+        <name>Wunderman Thompson Technology</name>
         <url>http://www.cognifide.com</url>
     </organization>
 
@@ -30,23 +30,23 @@
             <id>lmatyja</id>
             <name>Łukasz Matyja</name>
             <email>lukasz.matyja@cognifide.com</email>
-            <organization>Cognifide</organization>
+            <organization>Wunderman Thompson Technology</organization>
             <organizationUrl>http://www.cognifide.com</organizationUrl>
         </developer>
         <developer>
             <id>spiochacz</id>
             <name>Sławomir Piochacz</name>
             <email>slawomir.piochacz@cognifide.com</email>
-            <organization>Cognifide</organization>
+            <organization>Wunderman Thompson Technology</organization>
             <organizationUrl>http://www.cognifide.com</organizationUrl>
         </developer>
     </developers>
 
     <scm>
-        <connection>scm:git:git@github.com:Cognifide/Maven-Vault-Checkout-Plugin.git</connection>
-        <developerConnection>scm:git:git@github.com:Cognifide/Maven-Vault-Checkout-Plugin.git</developerConnection>
+        <connection>scm:git:git@github.com:wttech/Maven-Vault-Checkout-Plugin.git</connection>
+        <developerConnection>scm:git:git@github.com:wttech/Maven-Vault-Checkout-Plugin.git</developerConnection>
         <tag>HEAD</tag>
-        <url>https://github.com/Cognifide/Maven-Vault-Checkout-Plugin</url>
+        <url>https://github.com/wttech/Maven-Vault-Checkout-Plugin</url>
     </scm>
 
     <!-- please add sonatype credentials in your user settings.xml file -->
